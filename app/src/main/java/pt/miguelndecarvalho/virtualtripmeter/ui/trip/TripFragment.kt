@@ -1,4 +1,4 @@
-package pt.miguelndecarvalho.virtualtripmeter.ui.dashboard
+package pt.miguelndecarvalho.virtualtripmeter.ui.trip
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import pt.miguelndecarvalho.virtualtripmeter.R
 
-class DashboardFragment : Fragment() {
+class TripFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var tripViewModel: TripViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProvider(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        tripViewModel =
+                ViewModelProvider(this).get(TripViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_trip, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        tripViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

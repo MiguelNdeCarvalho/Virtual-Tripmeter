@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="pt.miguelndecarvalho.virtualtripmeter.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="pt.miguelndecarvalho.virtualtripmeter.ui.trip.TripFragment"
+        android:label="@string/title_trip"
+        tools:layout="@layout/fragment_trip" />
 
     <fragment
         android:id="@+id/navigation_settings"
