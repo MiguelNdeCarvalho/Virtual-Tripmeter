@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="10dp"
-        android:text="Km"
+        android:text="@string/trip_unitKilometers"
         android:textColor="@color/orange_200"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -62,11 +62,11 @@
         app:layout_constraintVertical_bias="0.666" />
 
     <TextView
-        android:id="@+id/parcialKM"
+        android:id="@+id/partialKM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="10dp"
-        android:text="Km"
+        android:text="@string/trip_unitKilometers"
         android:textColor="@color/orange_200"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -76,4 +76,65 @@
         app:layout_constraintStart_toStartOf="@+id/partialButton"
         app:layout_constraintTop_toBottomOf="@+id/totalButton"
         app:layout_constraintVertical_bias="0.659" />
+
+    <TextView
+        android:id="@+id/totalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:text="@string/trip_totalTitle"
+        android:textColor="@color/orange_200"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/totalButton"
+        app:layout_constraintEnd_toEndOf="@+id/totalButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/totalButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/partialTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:text="@string/trip_partialTitle"
+        android:textColor="@color/orange_200"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/partialButton"
+        app:layout_constraintTop_toBottomOf="@+id/totalButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/totalInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:text="@string/trip_totalInstructions"
+        android:textColor="@color/orange_200"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/totalButton"
+        app:layout_constraintEnd_toEndOf="@+id/totalButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/totalButton"
+        app:layout_constraintVertical_bias="0.869" />
+
+    <TextView
+        android:id="@+id/partialInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:elevation="10dp"
+        android:text="@string/trip_partialInstructions"
+        android:textColor="@color/orange_200"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/partialButton"
+        app:layout_constraintTop_toBottomOf="@+id/totalButton"
+        app:layout_constraintVertical_bias="0.721" />
 </androidx.constraintlayout.widget.ConstraintLayout>
