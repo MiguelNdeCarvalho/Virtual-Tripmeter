@@ -21,11 +21,6 @@ class TripFragment : Fragment() {
     ): View? {
         tripViewModel =
                 ViewModelProvider(this).get(TripViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_trip, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        tripViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        return inflater.inflate(R.layout.fragment_trip, container, false)
     }
 }

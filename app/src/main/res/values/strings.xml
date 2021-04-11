@@ -9,4 +9,10 @@
     <string name="settings_velocityText">Set base speed</string>
     <string name="settings_velocityDefault">100</string>
     <string name="settings_alertButton">Play a sound when resetting trips</string>
+    <string name="trip_unitKilometers">Km</string>
+    <string name="trip_unitMiles">Mi</string>
+    <string name="trip_totalTitle">Total</string>
+    <string name="trip_totalInstructions">Long Press to Reset</string>
+    <string name="trip_partialTitle">Partial</string>
+    <string name="trip_partialInstructions">Tap to Reset</string>
 </resources>
