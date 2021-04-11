@@ -60,10 +60,12 @@
         android:textColor="@color/orange_200"
         android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/partialButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.897"
         app:layout_constraintStart_toStartOf="@+id/partialButton"
-        app:layout_constraintTop_toBottomOf="@+id/totalButton" />
+        app:layout_constraintTop_toBottomOf="@+id/totalButton"
+        app:layout_constraintVertical_bias="0.664" />
 
     <TextView
         android:id="@+id/totalTitle"
@@ -123,4 +125,13 @@
         app:layout_constraintStart_toStartOf="@+id/partialButton"
         app:layout_constraintTop_toBottomOf="@+id/totalButton"
         app:layout_constraintVertical_bias="0.737" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="539dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
