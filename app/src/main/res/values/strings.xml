@@ -5,4 +5,8 @@
     <string name="title_settings">Settings</string>
     <string name="home_description">You won`t miss a note again!</string>
     <string name="home_button">Start</string>
+    <string name="settings_unitsButton">Use Imperial Unit of Measurement</string>
+    <string name="settings_velocityText">Set base speed</string>
+    <string name="settings_velocityDefault">100</string>
+    <string name="settings_alertButton">Play a sound when resetting trips</string>
 </resources>
