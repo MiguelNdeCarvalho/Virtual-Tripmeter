@@ -11,8 +11,8 @@
         android:layout_width="fill_parent"
         android:layout_height="250dp"
         android:text="0.00"
-        android:textSize="120sp"
         android:textAlignment="textStart"
+        android:textSize="120sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,13 +21,13 @@
         app:layout_constraintVertical_bias="0.029" />
 
     <Button
-        android:id="@+id/partial"
+        android:id="@+id/partialButton"
         android:layout_width="fill_parent"
         android:layout_height="250dp"
         android:layout_marginBottom="188dp"
         android:text="0.00"
-        android:textSize="120sp"
         android:textAlignment="textStart"
+        android:textSize="120sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -41,8 +41,39 @@
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/partial"
+        app:layout_constraintTop_toBottomOf="@+id/partialButton"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp" />
 
+    <TextView
+        android:id="@+id/totalKM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:text="Km"
+        android:textColor="@color/orange_200"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/totalButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="@+id/totalButton"
+        app:layout_constraintTop_toTopOf="@+id/totalButton"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <TextView
+        android:id="@+id/parcialKM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:text="Km"
+        android:textColor="@color/orange_200"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="@+id/partialButton"
+        app:layout_constraintTop_toBottomOf="@+id/totalButton"
+        app:layout_constraintVertical_bias="0.659" />
 </androidx.constraintlayout.widget.ConstraintLayout>
