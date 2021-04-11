@@ -35,16 +35,6 @@
         app:layout_constraintTop_toBottomOf="@+id/totalButton"
         app:layout_constraintVertical_bias="0.0" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/partialButton"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp" />
-
     <TextView
         android:id="@+id/totalKM"
         android:layout_width="wrap_content"
@@ -70,12 +60,10 @@
         android:textColor="@color/orange_200"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.897"
         app:layout_constraintStart_toStartOf="@+id/partialButton"
-        app:layout_constraintTop_toBottomOf="@+id/totalButton"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintTop_toBottomOf="@+id/totalButton" />
 
     <TextView
         android:id="@+id/totalTitle"
@@ -101,11 +89,9 @@
         android:textColor="@color/orange_200"
         android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/partialButton"
-        app:layout_constraintTop_toBottomOf="@+id/totalButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/totalButton" />
 
     <TextView
         android:id="@+id/totalInstructions"
@@ -132,9 +118,9 @@
         android:textColor="@color/orange_200"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintBottom_toBottomOf="@+id/partialButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/partialButton"
         app:layout_constraintTop_toBottomOf="@+id/totalButton"
-        app:layout_constraintVertical_bias="0.721" />
+        app:layout_constraintVertical_bias="0.737" />
 </androidx.constraintlayout.widget.ConstraintLayout>
