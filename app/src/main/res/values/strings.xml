@@ -15,4 +15,5 @@
     <string name="trip_totalInstructions">Long Press to Reset</string>
     <string name="trip_partialTitle">Partial</string>
     <string name="trip_partialInstructions">Tap to Reset</string>
+    <string name="copyright">MiguelNdeCarvalho and FilipeAlfaiate Ⓒ 2021</string>
 </resources>
