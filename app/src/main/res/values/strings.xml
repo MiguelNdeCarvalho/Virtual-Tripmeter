@@ -21,6 +21,10 @@
     <string name="login_error_empty_username">Username is empty</string>
     <string name="login_error_empty_password">Password is empty</string>
     <string name="login_error_mismatch">Invalid username and/or password!</string>
+    <string name="login_logout">Logout</string>
+    <string name="login_logout_toast">We hope you come back soon %s!</string>
+    <string name="login_delete">Delete account</string>
+    <string name="login_delete_toast">Goodbye %s!</string>
 
     <!-- Home Fragment -->
     <string name="home_description">You won`t miss a note again!</string>
