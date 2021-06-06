@@ -57,6 +57,17 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun nonAuthenticated(){
+        callLoginUI()
+    }
+
+    private fun setupButton(){
+        findViewById<Button>(R.id.login_button).setOnClickListener {
+            callLoginUI()
+        }
+    }
+
+    private fun callLoginUI(){
+
         val providers = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build(),
             AuthUI.IdpConfig.GoogleBuilder().build(),
@@ -66,26 +77,13 @@ class LoginActivity : AppCompatActivity() {
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
                 .setIsSmartLockEnabled(false)
+                .setTheme(R.style.FirebaseUITheme)
+                .setTosAndPrivacyPolicyUrls("https://virtual-tripmeter.miguelndecarvalho.pt/terms-of-service.html",
+                    "https://virtual-tripmeter.miguelndecarvalho.pt/privacy-policy.html")
+                .setLogo(R.drawable.ic_icon_login_ui)
                 .build(),
             RC_SIGN_IN
         )
-    }
-
-    private fun setupButton(){
-        findViewById<Button>(R.id.login_button).setOnClickListener {
-            val providers = arrayListOf(
-                AuthUI.IdpConfig.EmailBuilder().build(),
-                AuthUI.IdpConfig.GoogleBuilder().build(),
-                AuthUI.IdpConfig.GitHubBuilder().build())
-            startActivityForResult(
-                AuthUI.getInstance()
-                    .createSignInIntentBuilder()
-                    .setAvailableProviders(providers)
-                    .setIsSmartLockEnabled(false)
-                    .build(),
-                RC_SIGN_IN
-            )
-        }
     }
 
 }
