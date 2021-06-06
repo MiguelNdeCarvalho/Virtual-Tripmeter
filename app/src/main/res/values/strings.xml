@@ -7,7 +7,9 @@
     <string name="copyright">MiguelNdeCarvalho and Filipe Alfaiate Ⓒ 2021</string>
 
     <!-- Login -->
-    <string name="login_login">Login</string>
+    <string name="login_button">Login</string>
+    <string name="login_welcome">Welcome %s!</string>
+    <string name="login_back">Welcome back %s!</string>
     <string name="login_signup">Sign Up</string>
     <string name="login_or">-OR-</string>
     <string name="login_alternative">Sign in with</string>
