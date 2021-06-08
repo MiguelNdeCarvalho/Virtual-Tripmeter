@@ -25,6 +25,8 @@
     <string name="login_logout_toast">We hope you come back soon %s!</string>
     <string name="login_delete">Delete account</string>
     <string name="login_delete_toast">Goodbye %s. It was nice to meet you!</string>
+    <string name="login_delete_dialog_title">Delete account</string>
+    <string name="login_delete_dialog_description">Do you really want to delete your account?</string>
 
     <!-- Home Fragment -->
     <string name="home_description">You won`t miss a note again!</string>
