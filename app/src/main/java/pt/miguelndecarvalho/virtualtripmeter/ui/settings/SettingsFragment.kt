@@ -1,7 +1,9 @@
 package pt.miguelndecarvalho.virtualtripmeter.ui.settings
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +39,6 @@ class SettingsFragment : Fragment() {
         mView.findViewById<Button>(R.id.delete_button).setOnClickListener{
             delete()
         }
-
         return mView
     }
 
@@ -52,12 +53,34 @@ class SettingsFragment : Fragment() {
     }
 
     private fun delete() {
+        val builder = AlertDialog.Builder(activity)
+        builder.setTitle(R.string.login_delete_dialog_title)
+        builder.setMessage(R.string.login_delete_dialog_description)
+        builder.setIcon(android.R.drawable.ic_dialog_alert)
+
+        builder.setPositiveButton("Yes"){dialogInterface, which ->
+            Log.d(tag,"User chose to delete account")
+            deleteAccount()
+        }
+
+        builder.setNegativeButton("No"){dialogInterface, which ->
+            Log.d(tag,"User chose not to delete account")
+        }
+
+
+        val alertDialog: AlertDialog = builder.create()
+
+        alertDialog.setCancelable(false)
+        alertDialog.show()
+    }
+
+    private fun deleteAccount() {
         AuthUI.getInstance()
             .delete(requireContext().applicationContext)
             .addOnCompleteListener {
-                val intent = Intent(requireContext().applicationContext, LoginActivity::class.java)
+                val intent = Intent(activity, LoginActivity::class.java)
                 startActivity(intent)
-                Toast.makeText(requireContext().applicationContext, getString(R.string.login_delete_toast, user?.displayName) , Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, getString(R.string.login_delete_toast, user?.displayName) , Toast.LENGTH_LONG).show()
             }
     }
 }
