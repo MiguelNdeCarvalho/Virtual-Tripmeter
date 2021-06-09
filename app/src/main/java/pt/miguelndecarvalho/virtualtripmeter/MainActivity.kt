@@ -23,4 +23,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        tripBarSelected(0)
+    }
+
+    public fun tripBarSelected(id: Int) {
+        val navController = findViewById<BottomNavigationView>(R.id.nav_view)
+        navController.menu.getItem(id).isChecked = true
+    }
 }

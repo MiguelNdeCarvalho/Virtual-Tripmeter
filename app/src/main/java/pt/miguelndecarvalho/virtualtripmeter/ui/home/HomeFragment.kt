@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import android.widget.Button
+import androidx.fragment.app.*
 import androidx.lifecycle.ViewModelProvider
+import pt.miguelndecarvalho.virtualtripmeter.MainActivity
 import pt.miguelndecarvalho.virtualtripmeter.R
+import pt.miguelndecarvalho.virtualtripmeter.ui.trip.TripFragment
 
 class HomeFragment : Fragment() {
 
@@ -19,6 +22,20 @@ class HomeFragment : Fragment() {
     ): View? {
         homeViewModel =
                 ViewModelProvider(this).get(HomeViewModel::class.java)
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+        var mView = inflater.inflate(R.layout.fragment_home, container, false)
+
+        var trip = TripFragment()
+
+        mView.findViewById<Button>(R.id.start_button).setOnClickListener{
+            val transaction = parentFragmentManager.beginTransaction()
+
+            transaction.replace(R.id.nav_host_fragment, trip)
+            transaction.addToBackStack(null)
+            transaction.commit()
+            (activity as MainActivity?)?.tripBarSelected(1)
+        }
+
+        return mView
     }
 }
