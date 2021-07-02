@@ -87,12 +87,20 @@ class SettingsFragment : Fragment() {
 
     private fun deleteAccount()
     {
+        val user = Firebase.auth.currentUser
+        val userID = user!!.uid
+        val db = Firebase.firestore
+
         AuthUI.getInstance()
             .delete(requireContext().applicationContext)
             .addOnCompleteListener {
-                val intent = Intent(activity, LoginActivity::class.java)
-                startActivity(intent)
-                Toast.makeText(activity, getString(R.string.login_delete_toast, user?.displayName) , Toast.LENGTH_LONG).show()
+                db.collection("userSettings").document(userID)
+                    .delete()
+                    .addOnSuccessListener {
+                        val intent = Intent(activity, LoginActivity::class.java)
+                        startActivity(intent)
+                        Toast.makeText(activity, getString(R.string.login_delete_toast, user?.displayName) , Toast.LENGTH_LONG).show()
+                    }
             }
     }
 
