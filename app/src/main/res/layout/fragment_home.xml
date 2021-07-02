@@ -49,8 +49,8 @@
 
     <Button
         android:id="@+id/start_button"
-        android:layout_width="116dp"
-        android:layout_height="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/home_button"
         android:textSize="20sp"
         android:textColor="@color/white"
