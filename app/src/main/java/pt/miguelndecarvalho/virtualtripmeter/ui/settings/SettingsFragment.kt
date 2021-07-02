@@ -98,29 +98,44 @@ class SettingsFragment : Fragment() {
 
     private fun checkSettings(mView: View)
     {
-        if(existsSettings())
-            getSettings(mView)
-        else
-            createDefaultDocument()
+        val user = Firebase.auth.currentUser
+        val userID = user!!.uid
+        val db = Firebase.firestore
+        val doc = db.collection("userSettings").document(userID)
 
-        //createListeners(mView)
+        doc.get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    getSettings(mView)
+                } else {
+                    createDefaultDocument(mView)
+                }
+            }
     }
 
     private fun existsSettings(): Boolean {
         val user = Firebase.auth.currentUser
         val userID = user!!.uid
         val db = Firebase.firestore
+        var temp=false
+        val doc = db.collection("userSettings").document(userID)
 
-        if (db.collection("userSettings").document(userID) != null)
-            return true
-        return false
+        doc.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    temp=true
+                }
+            }
+
+        return temp
     }
 
-    private fun createDefaultDocument()
+    private fun createDefaultDocument(mView: View)
     {
         val user = Firebase.auth.currentUser
         val userID = user!!.uid
         val db = Firebase.firestore
+
 
         val defaultSettings = hashMapOf(
             "toggleImperialUnits" to false,
@@ -131,6 +146,9 @@ class SettingsFragment : Fragment() {
         db.collection("userSettings")
             .document(userID)
             .set(defaultSettings)
+            .addOnSuccessListener { document ->
+                getSettings(mView)
+            }
     }
 
     private fun getSettings(mView:View)
