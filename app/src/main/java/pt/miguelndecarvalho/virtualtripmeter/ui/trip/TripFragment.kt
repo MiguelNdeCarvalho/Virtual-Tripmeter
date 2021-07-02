@@ -188,12 +188,12 @@ class TripFragment : Fragment() {
                 break
             }
 
-            var speedSecond = baseSpeed.toFloat() / 3600
+            var speedSecond = (baseSpeed.toFloat() * 0.5) / 3600
             total += speedSecond
             partial += speedSecond
             mView.findViewById<TextView>(R.id.totalButton).text = "%.2f".format(total)
             mView.findViewById<TextView>(R.id.partialButton).text = "%.2f".format(partial)
-            delay(1000)
+            delay(500)
         }
     }
 }
