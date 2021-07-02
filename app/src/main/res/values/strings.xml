@@ -33,8 +33,10 @@
     <string name="home_button">Start</string>
 
     <!-- Trip Fragment -->
-    <string name="trip_unitKilometers">Km</string>
-    <string name="trip_unitMiles">Mi</string>
+    <string name="trip_unitKilometersHour">km/h</string>
+    <string name="trip_unitMilesHour">mph</string>
+    <string name="trip_unitKilometers">km</string>
+    <string name="trip_unitMiles">mi</string>
     <string name="trip_totalTitle">Total</string>
     <string name="trip_totalInstructions">Long Press to Reset</string>
     <string name="trip_partialTitle">Partial</string>
