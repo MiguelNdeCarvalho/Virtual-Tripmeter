@@ -29,7 +29,7 @@
     <string name="login_delete_dialog_description">Do you really want to delete your account?</string>
 
     <!-- Home Fragment -->
-    <string name="home_description">You won`t miss a note again!</string>
+    <string name="home_description">"You won't miss a note again!"</string>
     <string name="home_button">Start</string>
 
     <!-- Trip Fragment -->
