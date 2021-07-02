@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.*
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import pt.miguelndecarvalho.virtualtripmeter.MainActivity
 import pt.miguelndecarvalho.virtualtripmeter.R
 import pt.miguelndecarvalho.virtualtripmeter.ui.trip.TripFragment
@@ -36,6 +39,40 @@ class HomeFragment : Fragment() {
             (activity as MainActivity?)?.tripBarSelected(1)
         }
 
+        createDocument(mView)
+
         return mView
+    }
+
+    private fun createDocument(mView: View){
+        val user = Firebase.auth.currentUser
+        val userID = user!!.uid
+        val db = Firebase.firestore
+        val doc = db.collection("userSettings").document(userID)
+
+        doc.get()
+            .addOnSuccessListener { document ->
+                if (! document.exists()) {
+                    createDefaultDocument(mView)
+                }
+            }
+    }
+
+    private fun createDefaultDocument(mView: View)
+    {
+        val user = Firebase.auth.currentUser
+        val userID = user!!.uid
+        val db = Firebase.firestore
+
+
+        val defaultSettings = hashMapOf(
+            "toggleImperialUnits" to false,
+            "baseSpeed" to "100",
+            "toggleAlertSounds" to false
+        )
+
+        db.collection("userSettings")
+            .document(userID)
+            .set(defaultSettings)
     }
 }
